@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Urbanick</title>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <link rel="icon" icon href=img\pics\favicon.ico>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+      
+      <script>
+      var current = 0;
+      var imagenes = new Array();
+      
+      $(document).ready(function() {
+          var numImages = 6;
+          if (numImages <= 3) {
+              $('.right-arrow').css('display', 'none');
+              $('.left-arrow').css('display', 'none');
+          }
+         
+          $('.left-arrow').on('click',function() {
+              if (current > 0) {
+                  current = current - 1;
+              } else {
+                  current = numImages - 3;
+              }
+              
+              $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
+              
+              return false;
+          });
+      
+          $('.left-arrow').on('hover', function() {
+              $(this).css('opacity','0.5');
+          }, function() {
+              $(this).css('opacity','1');
+          });
+      
+          $('.right-arrow').on('hover', function() {
+              $(this).css('opacity','0.5');
+          }, function() {
+              $(this).css('opacity','1');
+          });
+      
+          $('.right-arrow').on('click', function() {
+              if (numImages > current + 3) {
+                  current = current+1;
+              } else {
+                  current = 0;
+              }
+              
+              $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
+              
+              return false;
+          }); 
+       });
+      </script>
+      </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header content">
+      <!-- Capa video -->
+      <div class="header-video">
+        <video src="video/video.mp4" autoplay loop muted></video>
+      </div>
+      <!-- Capa opacidad -->
+      <div class="header-overlay"></div>
+      <!-- Capa Contenido -->
+      <div class="header-content">
+        <h1>Escoge tu estadía</h1>
+        <p>Tenemos disponibles 6 habitaciones para ti</p>
+
+          <!-- Choose reservation -->
+          
+      
+    
+      <div class="row">
+        <div id="content" class="col-lg-12">
+            <div id="carrusel">
+                <a href="#" class="left-arrow"><img src="images/left-arrow.png" /></a>
+                <a href="#" class="right-arrow"><img src="images/right-arrow.png" /></a>
+                <div class="carrusel">
+                  <div class="product" id="product_0">
+                    <div class="info-img">
+                      <img src="img\reservation\1.jpg" class="reservation-img" width="290" height="150">
+                      <section class="information-text">
+                        <h2>Soft | 165.00 €</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                      </section>
+                    </div>                      
+                    <a href="form.html" class="btn">Reserva</a>
+                  </div>
+                  <div class="product" id="product_1">
+                    <div class="info-img">
+                      <img src="img\reservation\2.jpg" class="reservation-img" width="290" height="150">
+                      <section class="information-text">
+                        <h2>Light | 175.00 €</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                      </section>
+                    </div>                      
+                    <a href="form.html" class="btn">Reserva</a>
+                  </div>
+                  <div class="product" id="product_2">
+                    <div class="info-img">
+                      <img src="img\reservation\3.jpg" class="reservation-img" width="290" height="150">
+                      <section class="information-text">
+                        <h2>Color | 170.00 €</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                      </section>
+                    </div>                      
+                      <a href="form.html" class="btn">Reserva</a>
+                  </div>
+                  <div class="product" id="product_3">
+                    <div class="info-img">
+                      <img src="img\reservation\4.jpg" class="reservation-img" width="290" height="150">
+                      <section class="information-text">
+                        <h2>Natural | 170.00 €</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                      </section>
+                    </div>                      
+                      <a href="form.html" class="btn">Reserva</a>
+                  </div>
+                  <div class="product" id="product_4">
+                    <div class="info-img">
+                      <img src="img\reservation\5.jpg" class="reservation-img" width="290" height="150">
+                      <section class="information-text">
+                        <h2>Citizen | 150.00 €</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                      </section>
+                    </div>                      
+                      <a href="form.html" class="btn">Reserva</a>
+                  </div>
+                  <div class="product" id="product_5">
+                    <div class="info-img">
+                      <img src="img\reservation\6.jpg" class="reservation-img" width="290" height="150">
+                      <section class="information-text">
+                        <h2>Basic | 125.00 €</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                      </section>
+                    </div>                      
+                      <a href="form.html" class="btn">Reserva</a>
+                  </div>
+                </div>
+            </div>
+              <a href="index.html" class="btn-back">Editar información de reserva</a>
+        </div>
+    </div>
+  </div>
+  </header>
+  </body>
+</html>
