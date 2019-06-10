@@ -65,6 +65,30 @@
           }); 
        });
       </script>
+
+      <script type="text/javascript">
+        
+        var search = window.location.search.replace( "?", "" ).split( "&" );
+
+        var city = search[ 0 ].split( "=" )[ 1 ];
+        var guests = search[ 1 ].split( "=" )[ 1 ];
+        var checkIn = search[ 2 ].split( "=" )[ 1 ];
+        var checkOut = search[ 3 ].split( "=" )[ 1 ];
+
+        console.log( city );
+        console.log( guests );
+        console.log( checkIn );
+        console.log( checkOut );
+
+        function form( stay = 'Soft' ) {
+
+          window.location.href = "./form.html?city=" + city + "&guests=" + guests + "&checkIn=" + checkIn + "&checkOut=" + checkOut + "&stay=" + stay;
+
+        }
+
+
+      </script>
+
       </head>
 
   <body>
@@ -99,7 +123,7 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
                       </section>
                     </div>                      
-                    <a href="form.html" class="btn">Reserva</a>
+                    <a href="#" onclick="form( 'Soft' )" class="btn">Reserva</a>
                   </div>
                   <div class="product" id="product_1">
                     <div class="info-img">
@@ -109,7 +133,7 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
                       </section>
                     </div>                      
-                    <a href="form.html" class="btn">Reserva</a>
+                    <a href="#" onclick="form( 'Light' )" class="btn">Reserva</a>
                   </div>
                   <div class="product" id="product_2">
                     <div class="info-img">
@@ -119,7 +143,7 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
                       </section>
                     </div>                      
-                      <a href="form.html" class="btn">Reserva</a>
+                      <a href="#" onclick="form( 'Color' )" class="btn">Reserva</a>
                   </div>
                   <div class="product" id="product_3">
                     <div class="info-img">

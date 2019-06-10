@@ -65,6 +65,27 @@ $(document).ready(function() {
     }); 
  });
 </script>
+
+<script type="text/javascript">
+  
+  function chooseYourStay() {
+
+    var city = document.getElementById( 'cityInput' ).value;
+    var guests = document.getElementById( 'guestsInput' ).value;
+    var checkIn = document.getElementById( 'chechInInput' ).value;
+    var checkOut = document.getElementById( 'checkOutInput' ).value;
+    
+    console.log( city );
+    console.log( guests );
+    console.log( checkIn );
+    console.log( checkOut );
+
+    window.location.href = "./choose_your_stay.html?city=" + city + "&guests=" + guests + "&checkIn=" + checkIn + "&checkOut=" + checkOut;
+
+  }
+
+</script>
+
 </head>
 
   <body>
@@ -85,13 +106,13 @@ $(document).ready(function() {
           <div class="content2">
 
             <div class="data-reservation">
-              <select class="selection" name="city">
+              <select class="selection" name="city" id="cityInput">
                 <option value="none">Ciudad</option>
                 <option value="Bogotá">Bogotá</option>
                 <option value="Cartagena">Cartagena</option>
                 <option value="Medellín">Medellín</option>
               </select>
-              <select class="selection" name="guests">
+              <select class="selection" name="guests" id="guestsInput">
                 <option value="none">Personas</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -99,10 +120,10 @@ $(document).ready(function() {
                 <option value="4">4</option>
                 <option value="5">5</option>
               </select>
-              <input type="date" name="calendar" class="selection">
-              <input type="date" name="calendar" class="selection">
+              <input type="date" name="calendar" class="selection" id="chechInInput">
+              <input type="date" name="calendar" class="selection" id="checkOutInput">
             </div>
-            <a href="choose_your_stay.html" class="btn-index">Reserva ahora</a>
+            <a href="#" onclick="chooseYourStay()" class="btn-index">Reserva ahora</a>
           </div>
           <!-- Informaion estadía -->
           <!-- <div class="information">
